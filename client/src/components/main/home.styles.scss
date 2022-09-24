@@ -1,0 +1,99 @@
+@use '../UI/button.scss';
+@use '../UI/_variables.sass' as *;
+
+.home-container {
+    padding: 4rem 0;
+    h1{
+        text-align: center;
+    }
+}
+
+.books-container {
+    margin: 1rem auto;
+    display: flex;
+    // grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    .book-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        margin: 1rem;
+        transform-style: preserve-3d;
+        box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        width: 350px;
+        height: 300px;
+        .book-card-content {
+            display: flex;
+            align-items: center;
+            height: 75%
+        }
+        .book-card-info {
+            padding-left: 0.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .title {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            text-overflow: ellipsis;
+            padding-bottom: .3rem;        
+        }
+        .subtitle {
+                font-size: 0.8rem;
+                font-weight: 300;
+                padding-bottom: .5rem;
+        }
+        .author {
+            font-size: 0.8rem;
+        }
+        img {       
+            object-fit: cover;
+        }
+        .card-span {
+            // background-color: #B3DEC1;
+            font-size: .7rem;
+            text-transform: uppercase;
+            display: block;
+            text-align: center;
+            margin-top: .5rem;
+            padding: 8px 10px;
+            border-radius: 3px;
+            border: darken($grey, 10%) 2px solid;
+        }
+       
+    }
+   
+}
+
+.card-btn {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    border: $highlight-color 1px solid;
+    &:hover {
+        color: $highlight-color;
+        background-color: darken($grey, 5%);
+    }
+}
+
+.card-btn:active {
+    transform: none;
+}
+
+.card-btn:first-child {
+    color: $highlight-color;
+    background-color: $base-color;
+    border: $highlight-color 1px solid;
+    &:hover {
+        color: $highlight-color;
+        background-color: darken($grey, 5%);
+    }
+}

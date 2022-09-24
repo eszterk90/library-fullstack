@@ -1,0 +1,91 @@
+@use '../UI/button.scss';
+@use '../UI/_variables.sass' as *;
+
+// .profile-container {
+//     padding: 4rem 0;
+//     perspective: 1000px;
+//     h1, p {
+//         text-align: center;
+//     }
+// }
+
+.books-section {
+    display: flex;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    width: 800px;
+    height: 500px;
+    align-self: center;
+    padding: 1.5rem;
+    margin: 0 auto;
+    background-color: $base-color;
+    .outer-container {
+        display: flex;
+        justify-content: center;
+        min-width: 40%;
+        .book-img {
+            width: 256px;
+            height: 378px;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            transition: 1s;
+            margin: 2rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    .book-description {
+        overflow: scroll;
+        height: 300px;
+    }
+    .book-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        h3 {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        p {
+            text-align: center;
+        }
+        .single-book-btn {
+            width: 200px;
+            margin: 2rem;
+            
+        }
+    } 
+}
+
+.book:hover .checkin {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 100px;
+    display: block;
+    background-color: $highlight-color;
+    color: $base-color;
+    border-radius: 3px;
+    font-size: 2rem;
+    font-weight: 300;
+    z-index: 5;
+}
+
+@media screen and (max-width: 768px) {
+
+    .book-info {
+        min-width: 90%;
+        margin: 0 auto;
+    }
+    .outer-container {
+           margin: 0 auto;
+    }
+}
